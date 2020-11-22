@@ -4,11 +4,11 @@ fuzzy metodlar ile kahve kalitesi belirleme.
 
 ## Kullanım
 
-python kodlarını çalıştırıken sistem paketleri ile karışıklık oluşturmama adına virtual enviroment kullanılması tavsiye edilir.
+python kodlarını çalıştırıken sistem paketleri ile karışıklık oluşturmama adına virtual enviroment kullanılması **şiddetle** tavsiye edilir.
 
 ### virtual enviroments
 ```
-python3 -m venv venv # python3 v
+python3 -m venv venv # python3 virtual env
 source ./venv/bin/activate
 ```
 
