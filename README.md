@@ -19,6 +19,11 @@ bkz. requirements.txt
 ## Data
 [coffee-quality-database](https://github.com/jldbc/coffee-quality-database)
 
+
+## Geliştirmeler
+
+- Normal dağılıma standart sapmasına göre az çoğun
+
 ## Katkıda Bulunanlar
 
 - Abdulcelil Kurt
