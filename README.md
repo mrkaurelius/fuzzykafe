@@ -18,11 +18,7 @@ bkz. requirements.txt
 
 ## Data
 [coffee-quality-database](https://github.com/jldbc/coffee-quality-database)
-
-
-## Geliştirmeler
-
-- Normal dağılıma standart sapmasına göre az çoğun
+[coffee-quality-database](https://www.kaggle.com/volpatto/coffee-quality-database-from-cqi?select=merged_data_cleaned.csv)
 
 ## Katkıda Bulunanlar
 
@@ -30,3 +26,7 @@ bkz. requirements.txt
 - Abdulhamit Kumru
 - Onur Güler
 - Yavuz Selimhan Akşahin
+
+### Kaynaklar
+
+- https://caffenero.com/us/the-journal/good-beans-vs-bad-beans-selecting-coffee-at-origin/

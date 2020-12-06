@@ -64,9 +64,9 @@ plt.hist(ar_vals, bins=60)
 plt.ylabel("Aroma")
 plt.show()
 
-# %% Aftertaste
+# %% Moisture
 
-ar_df = df["Aftertaste"]
+ar_df = df["Category.Two.Defects"]
 ar_vals = ar_df.values
 ar_vals = ar_vals[ar_vals != 0]
 ar_vals = np.sort(ar_vals)
@@ -76,7 +76,7 @@ plt.ylabel("Aftertaste")
 plt.plot(ar_vals)
 plt.show()
 
-plt.hist(ar_vals, bins=60)
+plt.hist(ar_vals, bins=20)
 plt.ylabel("Aftertaste")
 plt.show()
 
