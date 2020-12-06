@@ -27,7 +27,7 @@ plt.plot(fl_vals)
 plt.ylabel("Flavor")
 plt.show()
 
-plt.hist(fl_vals, bins=34)
+plt.hist(fl_vals, bins=60)
 plt.ylabel("Flavor")
 plt.show()
 
@@ -44,7 +44,7 @@ plt.ylabel("Acidity")
 plt.plot(ac_vals)
 plt.show()
 
-plt.hist(ac_vals, bins=43)
+plt.hist(ac_vals, bins=60)
 plt.ylabel("Acidity")
 plt.show()
 
@@ -60,7 +60,7 @@ plt.ylabel("Aroma")
 plt.plot(ar_vals)
 plt.show()
 
-plt.hist(ar_vals, bins=45)
+plt.hist(ar_vals, bins=60)
 plt.ylabel("Aroma")
 plt.show()
 
@@ -76,7 +76,7 @@ plt.ylabel("Aftertaste")
 plt.plot(ar_vals)
 plt.show()
 
-plt.hist(ar_vals, bins=50)
+plt.hist(ar_vals, bins=60)
 plt.ylabel("Aftertaste")
 plt.show()
 
