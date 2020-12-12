@@ -25,7 +25,7 @@ Dataset degerleri
 - Acidity
 - Body
 - Balance
-- Uniformity
+- Uniformity *
 - Cup Cleanliness
 - Sweetness
 - Moisture
@@ -43,19 +43,32 @@ Dataset degerleri
 - Lot Number
 - Mill
 - Company
-- Altitude
+- Altitude *
 - Region
 
 
 ### Bizim Kullandıklarımız/Kullanacaklarimiz
 
-#### Kural Kumesi 1 (Quality) (Uzman gorusu)
-- Moisture (Name) (dagilimi guzel)
+#### Degisken Kumesi 1 (Quality) (Uzman gorusu)
+- Moisture 
 - Uniformity
 - Defects
 
-#### Degiskenler 2 (Quality) (Bizim belirledigimiz)
+#### Degisken Kumesi 2 (Quality) (Bizim belirledigimiz)
 - Aroma (Aroma)
 - Flavor (Lezzet)
 - Acidity (Asitlik)
 - Aftertaste (Ağızda kalan tat)
+
+#### Degisken Kumesi 3
+- Moisture 
+- Aroma (Aroma)
+- Acidity
+
+IF Moisture Medium AND AROMA High AND Acidity Low
+
+#### Degisken Kumesi 3
+- Body
+- Flavor (Lezzet)
+- Moisture
+

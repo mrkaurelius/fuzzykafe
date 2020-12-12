@@ -66,18 +66,18 @@ plt.show()
 
 # %% Moisture
 
-ar_df = df["Category.Two.Defects"]
+ar_df = df["Balance"]
 ar_vals = ar_df.values
 ar_vals = ar_vals[ar_vals != 0]
 ar_vals = np.sort(ar_vals)
 
 plt.style.use('ggplot')
-plt.ylabel("Aftertaste")
+plt.ylabel("Sweetness")
 plt.plot(ar_vals)
 plt.show()
 
 plt.hist(ar_vals, bins=20)
-plt.ylabel("Aftertaste")
+plt.ylabel("Sweetness")
 plt.show()
 
 # %% comments
