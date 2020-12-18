@@ -89,8 +89,6 @@ ax0.plot(x_wash, wash_L, 'r', linewidth=0.5, linestyle='--', )
 ax0.fill_between(x_wash, wash0, wash_activation4, facecolor='r', alpha=0.7)
 ax0.plot(x_wash, wash_VL, 'y', linewidth=0.5, linestyle='--', )
 ax0.set_title('Output membership activity')
-
-# Turn off top/right exes
 for ax in (ax0,):
     ax.spines['top'].set_visible(False)
     ax.spines['right'].set_visible(False)
@@ -110,16 +108,6 @@ ax0.plot(x_wash, wash_M, 'r', linewidth=1.5, linestyle='--')
 ax0.plot(x_wash, wash_L, 'y', linewidth=1.5, linestyle='--')
 ax0.plot(x_wash, wash_VL, 'm', linewidth=1.5, linestyle='--')
 ax0.fill_between(x_wash, wash0, aggregated, facecolor='Orange', alpha=0.7)
-ax.plot([wash, wash], [0, wash_activation], 'k', linewidth=1.5, alpha=0.9)
+ax0.plot([wash, wash], [0, wash_activation], 'k', linewidth=1.5, alpha=0.9)
 ax0.set_title('Aggregated membership and result (line)')
 plt.tight_layout()
-
-
- 
-
-
-
-
-
-
-
