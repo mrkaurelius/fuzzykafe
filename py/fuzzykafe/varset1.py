@@ -8,14 +8,9 @@ IF (Aftertaste Yuksek) and (Acidity Yuksek) then Flavor Yuksek
 IF (Aftertaste Yuksek) and (Acidity Yuksek) then Flavor Yuksek
 IF (Aftertaste Yuksek) and (Acidity Yuksek) then Flavor Yuksek
 
-
 Uyelik Fonksyonlari
 ucgenin trimf 6 7 8, 7 8 9, 8 9 10
 AZ ORTA COK
-
-modeli test ederken veri setinde belirli ozellikler disinda olanlari 
-
-modelde olmayan verileri drop etmek gerekir
 """
 
 #%% importlar
@@ -24,18 +19,6 @@ import numpy as np
 import skfuzzy as fuzz
 import pandas as pd
 import matplotlib.pyplot as plt
-
-
-#%% functions
-
-def plot_memberhips():    
-    pass
-
-def plot_memberhips():    
-    pass
-
-def iterate_dataset():
-    pass
 
 #%% kullanilacak verilerin duzenlenmesi
 
@@ -103,6 +86,14 @@ random_row = df.sample(n = 1)
 aftertaste = random_row.iloc[0]['Aftertaste']
 acidity = random_row.iloc[0]['Acidity']
 flavor_org = random_row.iloc[0]['Flavor']
+
+# aftertaste = 5.25
+# acidity = 6.17
+# flavor_org = 6.08
+
+df.max(axis = 0) 
+df.min(axis = 0) 
+
 row_t  = (aftertaste, acidity, flavor_org,)
 print("random data sample")
 print("Acidity: ", acidity )
@@ -182,7 +173,8 @@ aggregated = np.fmax (flavor_activation_1,
 '''
 
 flavor_model = fuzz.defuzz(x_flavor, aggregated, 'centroid')
-flavor_activation = wash_activation = fuzz.interp_membership(x_flavor, aggregated, flavor_model)
+# !!! flavor_activation bunun olayini anlamak lazim
+flavor_activation = fuzz.interp_membership(x_flavor, aggregated, flavor_model)
 
 print('flavor model: ', flavor_model)
 print('flavor original: ', flavor_org)
