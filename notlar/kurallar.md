@@ -1,12 +1,10 @@
 # Fuzzy Sistem Kuralları
 
-
 ## Kurrallar
 - oncelikle dilsel kurallari belirlemek lazim
 - belirlenen kurallari mamdani ile implement etmek lazim
 - kurallari belirlemek icin mandani yontemini kullanacagiz
 - rapordaki nem, yukseklik-iklim kullanilarak kurallar olusturulabilir  
-
 
 ## Örnek Kural
 - Suyun sıcaklığına ve hava basıncına göre suyun kaynama durumunu belirlemek.
@@ -46,7 +44,6 @@ Dataset degerleri
 - Altitude *
 - Region
 
-
 ### Bizim Kullandıklarımız/Kullanacaklarimiz
 
 #### Degisken Kumesi 1 (Quality) (Uzman gorusu)
@@ -67,7 +64,7 @@ Dataset degerleri
 
 IF Moisture Medium AND AROMA High AND Acidity Low
 
-#### Degisken Kumesi 3
+#### Degisken Kumesi 4
 - Body
 - Flavor (Lezzet)
 - Moisture

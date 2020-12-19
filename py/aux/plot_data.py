@@ -7,7 +7,7 @@ import matplotlib.pyplot as plt
 
 # %% read dataset with pandas and explore dataset
 
-df = pd.read_csv("../data/merged_data_cleaned.csv")
+df = pd.read_csv("../../data/merged_data_cleaned.csv")
 
 columns = df.columns
 print("columns: ", columns)  # columns
@@ -66,25 +66,15 @@ plt.show()
 
 # %% Moisture
 
-ar_df = df["Balance"]
+ar_df = df["Moisture"]
 ar_vals = ar_df.values
-ar_vals = ar_vals[ar_vals != 0]
-ar_vals = np.sort(ar_vals)
+
 
 plt.style.use('ggplot')
-plt.ylabel("Sweetness")
-plt.plot(ar_vals)
+
+plt.hist(ar_vals, bins=30)
 plt.show()
+#%% describe
 
-plt.hist(ar_vals, bins=20)
-plt.ylabel("Sweetness")
-plt.show()
 
-# %% comments
 
-# harv_years = df["Harvest.Year", "Grading.Date"]
-# harv_years = harv_years.dropna() # drop nans
-# hy_values = harv_years.values # np arr
-
-# hy_col = list(hy_values) # python list
-# for col in relevant_columns:
