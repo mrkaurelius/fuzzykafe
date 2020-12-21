@@ -51,7 +51,7 @@ def iterate_dataset():
         cup_points_org = row['Cupper.Points']
         
         # print(row['Aftertaste'], row['Acidity'], row['Cupper.Points'])
-        print("Acidity: ", flavor, "Aftertaste: ", aftertaste, "Cupper.Points Org: ", cup_points_org )
+        print("Flavor: ", flavor, "Aftertaste: ", aftertaste, "Cupper.Points Org: ", cup_points_org )
         
         cup_points_model = fuzz_system(aftertaste, flavor)
         

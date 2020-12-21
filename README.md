@@ -4,12 +4,27 @@ fuzzy metodlar ile kahve kalitesi belirleme.
 
 ## Kullanım
 
-python kodlarını çalıştırıken sistem paketleri ile karışıklık oluşturmama adına virtual enviroment kullanılması **şiddetle** tavsiye edilir.
+Ubuntu 18 Bionicte test edilmistir. python kodlarını çalıştırıken sistem paketleri ile karışıklık oluşturmama adına virtual enviroment kullanılması **şiddetle** tavsiye edilir.
 
-### virtual enviroments
-```
+``` bash
+git clone https://github.com/mrkaurelius/fuzzykafe
+cd fuzzykafe
+
+# virtual env. aktivasyonu
 python3 -m venv venv # python3 virtual env
 source ./venv/bin/activate
+
+# bagimliliklarin yuklenmesi
+pip3 install -r requirements.txt
+
+# programin calistirilmasi
+cd py/fuzzykafe
+
+# tek satir veri icin, gorsellestirme
+python3 varset2.py
+
+# modelin testi 
+python3 varset2_modeltest.py
 ```
 
 ### bağımlılıklar (dependencies)
