@@ -13,7 +13,7 @@ import pandas as pd
 x_aftertaste = np.arange(6, 10.1, 0.1)
 x_acidity = np.arange(6, 10.1, 0.1)
 x_flavor = np.arange(6, 10.1, 0.1)
-
+    
 aftertaste_D = fuzz.trimf(x_aftertaste, [6, 7, 8])
 aftertaste_O = fuzz.trimf(x_aftertaste, [7, 8, 9])
 aftertaste_Y = fuzz.trimf(x_aftertaste, [8, 9, 10])
@@ -25,6 +25,17 @@ acidity_Y = fuzz.trimf(x_acidity, [8, 9, 10])
 flavor_D = fuzz.trimf(x_flavor, [6, 7, 8])
 flavor_O = fuzz.trimf(x_flavor, [7, 8, 9])
 flavor_Y = fuzz.trimf(x_flavor, [8, 9, 10])
+
+for i in range(10):
+    aftertaste_D[i] = 1 
+    acidity_D[i] = 1
+    flavor_D[i] = 1
+    
+for i in range(30,41):
+    aftertaste_Y[i] = 1
+    acidity_Y[i] = 1 
+    flavor_Y[i] = 1
+
 
 #%% iterate_dataset func
 
