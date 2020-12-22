@@ -58,7 +58,7 @@ def iterate_dataset():
         print('cup_points model: ', cup_points_model)
         print('cup_points original: ', cup_points_org)
         
-        model_error = abs((cup_points_model - cup_points_org) / cup_points_org) * 100
+        model_error = abs((cup_points_model - cup_points_org)) / cup_points_org * 100
         err_sum += model_error
       
         print('model error', format(model_error, '.4f'))
@@ -97,59 +97,52 @@ def fuzz_system(aftertaste, flavor):
     aftertaste_level_O = fuzz.interp_membership(x_aftertaste, aftertaste_O, aftertaste)
     aftertaste_level_Y = fuzz.interp_membership(x_aftertaste, aftertaste_Y, aftertaste)
     
-    # print("membership aftertaste_level_D: ", aftertaste_level_D)
-    # print("membership aftertaste_level_O: ", aftertaste_level_O)
-    # print("membership aftertaste_level_Y: ", aftertaste_level_Y)
-    
     flavor_level_D = fuzz.interp_membership(x_flavor, flavor_D, flavor)
     flavor_level_O = fuzz.interp_membership(x_flavor, flavor_O, flavor)
     flavor_level_Y = fuzz.interp_membership(x_flavor, flavor_Y, flavor)
+  
     
-    # print("membership flavor_level_D: ", flavor_level_D)
-    # print("membership flavor_level_O: ", flavor_level_O)
-    # print("membership flavor_level_Y: ", flavor_level_Y)    
+    rule1 = np.fmin(flavor_level_D, aftertaste_level_D)
+    rule2 = np.fmin(flavor_level_D, aftertaste_level_O)
+    rule3 = np.fmin(flavor_level_D, aftertaste_level_Y)
     
-    active_rule1 = np.fmin(flavor_level_D, aftertaste_level_D)
-    active_rule2 = np.fmin(flavor_level_D, aftertaste_level_O)
-    active_rule3 = np.fmin(flavor_level_D, aftertaste_level_Y)
+    rule4 = np.fmin(flavor_level_O, aftertaste_level_D)
+    rule5 = np.fmin(flavor_level_O, aftertaste_level_O)
+    rule6 = np.fmin(flavor_level_O, aftertaste_level_Y)
     
-    active_rule4 = np.fmin(flavor_level_O, aftertaste_level_D)
-    active_rule5 = np.fmin(flavor_level_O, aftertaste_level_O)
-    active_rule6 = np.fmin(flavor_level_O, aftertaste_level_Y)
+    rule7 = np.fmin(flavor_level_Y, aftertaste_level_D)
+    rule8 = np.fmin(flavor_level_Y, aftertaste_level_O)
+    rule9 = np.fmin(flavor_level_Y, aftertaste_level_Y)
     
-    active_rule7 = np.fmin(flavor_level_Y, aftertaste_level_Y)
-    active_rule8 = np.fmin(flavor_level_Y, aftertaste_level_Y)
-    active_rule9 = np.fmin(flavor_level_Y, aftertaste_level_Y)
+    cup_points_activation_1 = np.zeros_like(rule1)
+    if np.sum(np.fmin(rule1, cup_points_D)) > 0:
+        cup_points_activation_1 = np.fmin(rule1, cup_points_D)
     
-    cup_points_activation_1 = np.zeros_like(active_rule1)
-    if np.sum(np.fmin(active_rule1, cup_points_D)) > 0:
-        cup_points_activation_1 = np.fmin(active_rule1, cup_points_D)
+    elif np.sum(np.fmin(rule2, cup_points_D)) > 0:
+        cup_points_activation_1 = np.fmin(rule2, cup_points_D) 
     
-    elif np.sum(np.fmin(active_rule2, cup_points_D)) > 0:
-        cup_points_activation_1 = np.fmin(active_rule2, cup_points_D) 
+    elif np.sum(np.fmin(rule4, cup_points_D)) > 0:
+        cup_points_activation_1 = np.fmin(rule4, cup_points_D)
     
-    elif np.sum(np.fmin(active_rule4, cup_points_D)) > 0:
-        cup_points_activation_1 = np.fmin(active_rule4, cup_points_D)
+    cup_points_activation_2 = np.zeros_like(rule1)
+    if np.sum(np.fmin(rule3, cup_points_O)) > 0:
+        cup_points_activation_2 = np.fmin(rule3, cup_points_O)
     
-    cup_points_activation_2 = np.zeros_like(active_rule1)
-    if np.sum(np.fmin(active_rule3, cup_points_O)) > 0:
-        cup_points_activation_2 = np.fmin(active_rule3, cup_points_O)
-    
-    elif np.sum(np.fmin(active_rule5, cup_points_O)) > 0:
-        cup_points_activation_2 = np.fmin(active_rule5, cup_points_O)
+    elif np.sum(np.fmin(rule5, cup_points_O)) > 0:
+        cup_points_activation_2 = np.fmin(rule5, cup_points_O)
      
-    elif np.sum(np.fmin(active_rule7, cup_points_O)) > 0:
-        cup_points_activation_2 = np.fmin(active_rule7, cup_points_O)
+    elif np.sum(np.fmin(rule7, cup_points_O)) > 0:
+        cup_points_activation_2 = np.fmin(rule7, cup_points_O)
         
-    cup_points_activation_3 = np.zeros_like(active_rule1)
-    if np.sum(np.fmin(active_rule6, cup_points_Y)) > 0:
-        cup_points_activation_3 = np.fmin(active_rule6, cup_points_Y)
+    cup_points_activation_3 = np.zeros_like(rule1)
+    if np.sum(np.fmin(rule6, cup_points_Y)) > 0:
+        cup_points_activation_3 = np.fmin(rule6, cup_points_Y)
     
-    elif np.sum(np.fmin(active_rule8, cup_points_Y)) > 0:
-        cup_points_activation_3 = np.fmin(active_rule8, cup_points_Y) 
+    elif np.sum(np.fmin(rule8, cup_points_Y)) > 0:
+        cup_points_activation_3 = np.fmin(rule8, cup_points_Y) 
     
-    elif np.sum(np.fmin(active_rule9, cup_points_Y)) > 0:
-        cup_points_activation_3 = np.fmin(active_rule9, cup_points_Y)
+    elif np.sum(np.fmin(rule9, cup_points_Y)) > 0:
+        cup_points_activation_3 = np.fmin(rule9, cup_points_Y)
     
     # cup_points0 = np.zeros_like(x_cup_points)
     aggregated = np.fmax (cup_points_activation_1, 
